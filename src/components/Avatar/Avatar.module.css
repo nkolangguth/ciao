@@ -1,0 +1,6 @@
+.avatar {
+  border-radius: 999px;
+  object-fit: cover;
+  display: block;
+  background: var(--color-neutral-border);
+}
