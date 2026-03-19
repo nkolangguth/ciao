@@ -1,0 +1,28 @@
+/* Centered mobile app column (max 440px). Background comes from body (--surface-page). */
+
+.shell {
+  width: 100%;
+  max-width: 440px;
+  min-height: 100svh;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  /* Space for placeholder bottom nav (padding + tap row) */
+  padding-bottom: calc(var(--space-3) * 2 + var(--space-8));
+}
+
+.nav {
+  position: fixed;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: min(100%, 440px);
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: var(--space-3);
+  border-top: 1px solid var(--border-default);
+  background: var(--color-neutral-surface);
+  z-index: 1;
+}

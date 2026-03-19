@@ -1,17 +1,18 @@
 .row {
   width: 100%;
+  box-sizing: border-box;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 12px;
-  padding: var(--space-2) var(--space-3);
+  /* 12px internal horizontal + vertical padding; divider spans this row width */
+  padding: var(--space-3);
   border-bottom: 1px solid var(--border-default);
 }
 
 .textBlock {
   display: flex;
   flex-direction: column;
-  gap: 2px;
+  gap: var(--space-1);
   min-width: 0;
 }
 
@@ -37,4 +38,3 @@
   align-items: center;
   justify-content: center;
 }
-

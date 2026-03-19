@@ -17,7 +17,7 @@ export default function CallRow({ call, onInfoClick }: CallRowProps) {
 
       <div className={styles.actions}>
         <IconButton
-          icon="information-fill"
+          icon="information-line"
           variant="info"
           size={40}
           aria-label="Call info"

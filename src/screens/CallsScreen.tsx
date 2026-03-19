@@ -1,29 +1,24 @@
-import Icon from "../components/Icon/Icon";
-import Avatar from "../components/Avatar/Avatar";
-import juliaAvatar from "../assets/Julia-profile.png";
-import IconButton from "../components/IconButton/IconButton";
+import TutorSection from '../components/TutorSection/TutorSection';
+import { tutors } from '../data/tutors';
+import styles from './CallsScreen.module.css';
 
 function CallsScreen() {
     return (
-        <div style={{ padding: 20 }}>
-            <h1>Calls</h1>
-            <Icon name="phone-fill" size={24} color="var(--color-semantic-call)" />
-            <Avatar src={juliaAvatar} alt="Julia" />
-            <IconButton
-                icon="phone-fill"
-                variant="call"
-                onClick={() => console.log("call")}
-                aria-label="Start call"
-            />
-
-            <IconButton
-                icon="information-line"
-                variant="info"
-                onClick={() => console.log("info")}
-                aria-label="View details"
-            />
+        <div className={styles.page}>
+            <h1 className={styles.title}>Recent calls</h1>
+            <div>
+                {tutors.map((tutor) => (
+                    <TutorSection
+                        key={tutor.id}
+                        tutor={tutor}
+                        onCallClick={(tutorId) => console.log('Start call:', tutorId)}
+                        onTutorInfoClick={(tutorId) => console.log('Open tutor details:', tutorId)}
+                        onCallInfoClick={(callId) => console.log('Open call details:', callId)}
+                    />
+                ))}
+            </div>
         </div>
     );
 }
 
-export default CallsScreen
+export default CallsScreen;
